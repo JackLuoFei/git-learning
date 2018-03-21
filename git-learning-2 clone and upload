@@ -1,0 +1,41 @@
+git-learning-2 clone git and uplaod git(git库克隆下载和上传更新git库)
+
+1.选择一个目录
+user@remote:~/桌面/Vim-learning$ cd ..
+user@remote:~/桌面$ ls
+ git-test  'Kali linux 学习'   SSID   Vim-learning
+命令说明：cd ..回退上一目录
+        ls   显示当前目录下文件
+2.不github远程服务器上的git库克隆到本地
+user@remote:~/桌面$ git clone git@github.com:JackLuoFei/git-learning.git
+正克隆到 'git-learning'...
+warning: 您似乎克隆了一个空仓库。
+
+3.新建一个文件修改完成后把它添加到本地git暂存区中
+user@remote:~/桌面/git-learning$ git add git-learning-1\ creat\ ssh\ key 
+可用git status命令确认是否已经添加进暂存区
+
+4.添加完成后把暂存区的内容提交至Git本地数据库
+user@remote:~/桌面/git-learning$ git commit -m 'git learning 1 How to creat ssh key and explain'
+[master（根提交） 0531ed7] git learning 1 How to creat ssh key and explain
+ 1 file changed, 112 insertions(+)
+ create mode 100644 git-learning-1 creat ssh key
+
+5.把本地库中的修改更新到远程github服务器库中
+user@remote:~/桌面/git-learning$ git push -u origin master
+对象计数中: 3, 完成.
+Delta compression using up to 2 threads.
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 2.83 KiB | 2.83 MiB/s, 完成.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:JackLuoFei/git-learning.git
+ * [new branch]      master -> master
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+
+6.查看更新提交日志
+user@remote:~/桌面/git-learning$ git log
+commit 0531ed7d7f71b7db0ccf209c5c90900a29119e59 (HEAD -> master, origin/master)
+Author: JackLuoFei <615975238@qq.com>
+Date:   Wed Mar 21 21:44:13 2018 +0800
+
+    git learning 1 How to creat ssh key and explain
